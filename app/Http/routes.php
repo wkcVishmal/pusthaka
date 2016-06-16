@@ -32,5 +32,17 @@ Route::get('/register', function () {
 });
 Route::post('/register', 'UserController@postSignUp');
 
+Route::get('/bookRegister', function () {
+    if( !Auth::guest() && (Auth::user()->privilege)=='librarian' ){
+        return view('bookRegister');
+    }else{
+        return view('home');
+    }
+});
+Route::post('/bookRegister', 'BookController@postBookRegister');
+
 //logout
 Route::get('/logout', 'UserController@getLogout');
+
+//Locate member
+Route::post('/locate', 'BookController@postBookRegister');

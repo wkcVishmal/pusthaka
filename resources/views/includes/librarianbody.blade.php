@@ -1,8 +1,33 @@
 <div class="container-fluid" id="section3">
         <div class="container-fluid">
-            <div class="col-md-3" id="catalog-logo">
-                <img src="images/ucsc.png" class="img img-responsive" />
-            </div>
+                <div class="col-md-3" id="catalog-logo">
+                        <img src="images/ucsc.png" class="img img-responsive" />
+                        <br></br>
+                        <div id="form">
+                                <from role="form" action="{{ url('/locate') }}">
+                                        <div class="form-group{{ $errors->has('id') ? ' has-error' : '' }}">
+                                            <label class="col-md-4 control-label">Member ID</label>
+                
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="id" value="{{ old('id') }}">
+                                                @if ($errors->has('id'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('id') }}</strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+        
+
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="fa-btn"></i>Locate Member
+                                                </button>
+                                            </div>
+                                        </div>
+                                </from>
+                        </div>
+        </div>
+                
             <div class="col-md-9" id="catalog-panel">
                 <div class="row">
                     <div class="panel panel-primary">
@@ -61,7 +86,7 @@
                             </div>
                             <div class="col-md-3 text-center">
                                 <div class="row">
-                                    <button type="button" class="btn btn-success main" id="bookmember-btn">
+                                    <button type="button" onclick="window.location.href='{{ url('/bookRegister') }}'" class="btn btn-success main" id="bookmember-btn">
                                         <img src="icons/addbook.png" width="150" />
                                     </button>
                                 </div> 
