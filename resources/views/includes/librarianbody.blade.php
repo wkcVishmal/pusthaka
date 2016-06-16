@@ -102,7 +102,7 @@
                             </div>
                             <div class="col-md-3 text-center">
                                 <div class="row">
-                                    <button type="button" class="btn btn-success main" id="bookmember-btn">
+                                    <button type="button" onclick="window.location.href='{{ url('/memberRegister') }}'" class="btn btn-success main" id="bookmember-btn">
                                         <img src="icons/addmember.png" width="150" />
                                     </button>
                                 </div> 
