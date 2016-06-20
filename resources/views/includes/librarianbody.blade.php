@@ -4,27 +4,31 @@
                         <img src="images/ucsc.png" class="img img-responsive" />
                         <br></br>
                         <div id="form">
-                                <from role="form" action="{{ url('/locate') }}">
-                                        <div class="form-group{{ $errors->has('id') ? ' has-error' : '' }}">
-                                            <label class="col-md-4 control-label">Member ID</label>
-                
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" name="id" value="{{ old('id') }}">
-                                                @if ($errors->has('id'))
-                                                    <span class="help-block">
-                                                        <strong>{{ $errors->first('id') }}</strong>
-                                                    </span>
-                                                @endif
-                                            </div>
-        
+                                <form class="form-horizontal" >
+                        
 
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-primary">
-                                                    <i class="fa-btn"></i>Locate Member
-                                                </button>
-                                            </div>
-                                        </div>
-                                </from>
+                        <div class="form-group{{ $errors->has('mid') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">ID</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="mid" value="{{ old('id') }}">
+
+                                @if ($errors->has('mid'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('mid') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                    
+                          <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                    <i class="fa fa-btn fa-user"></i>Locate Member
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                         </div>
         </div>
                 
@@ -37,7 +41,7 @@
                         <div class="panel-body text-center">
                             <div class="col-md-3 text-center">
                                 <div class="row">
-                                    <button type="button" class="btn btn-success main" id="frontdesk-btn">
+                                    <button type="button" onclick="window.location.href='{{ url('/locate') }}'" class="btn btn-success main" id="frontdesk-btn">
                                         <img src="icons/issue&return.png" width="150" />
                                     </button>
                                 </div> 
@@ -156,3 +160,25 @@
         </div>
     </div>
 </body>
+<!-- Trigger the modal with a button -->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Locate Member</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

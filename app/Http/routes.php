@@ -45,7 +45,14 @@ Route::post('/bookRegister', 'BookController@postBookRegister');
 Route::get('/logout', 'UserController@getLogout');
 
 //Locate member
-Route::post('/locate', 'BookController@postBookRegister');
+Route::get('/locate', function () {
+    if( !Auth::guest() && (Auth::user()->privilege)=='librarian' ){
+        return view('bookLending');
+    }else{
+        return view('home');
+    }
+});
+Route::post('/locate', 'MemberController@postLocateMember');
 
 Route::get('/memberRegister', function () {
     if( !Auth::guest() && (Auth::user()->privilege)=='librarian' ){
@@ -55,3 +62,5 @@ Route::get('/memberRegister', function () {
     }
 });
 Route::post('/memberRegister', 'MemberController@postMemberRegister');
+
+Route::post('/locateCopy', 'CopyController@postLocateCopy');

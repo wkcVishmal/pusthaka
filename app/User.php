@@ -9,4 +9,8 @@ class User extends Model implements Authenticatable
 {
     use \Illuminate\Auth\Authenticatable;
     
+    public function privilege()
+    {
+        return $this->hasOne('App\Privilege');
+    }
 }
