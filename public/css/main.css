@@ -1,0 +1,122 @@
+@charset "utf-8";
+/* CSS Document */
+
+#section1{
+	background-color:#000;	
+}
+
+#head-content{
+    padding:10px;
+}
+
+.content1{
+	font-family: 'Oswald', sans-serif;
+	color:white;
+	font-size:1.2em;
+}
+
+.content2{
+	font-family: 'Lato', sans-serif;
+	color:white;	
+}
+
+#section2{
+	background-color:#000;	
+}
+
+#section2 .navbar{
+	background-color:#000;
+	border:0px;
+	margin:0px;	
+}
+
+#section2 .navbar-toggle{
+	border:#333;	
+}
+
+#section2 .icon-bar{
+	color:#333;
+	background-color:#333;	
+}
+
+.nav-text{
+	color:#333;	
+}
+
+a {
+  color:white; /*color: #337ab7;*/
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color:black; /*color: #23527c;*/
+  text-decoration: underline;
+}
+
+#catalog-logo{
+    padding-top:50px;
+    padding-right: 50px;
+}
+
+.panel-primary {
+    border-color: #000; /*border-color: #337AB7;*/
+    margin-top: 10px;
+}
+
+.panel-primary > .panel-heading {
+    color: #FFF;
+    background-color: #000;
+    border-color: #000;
+}
+
+.panel-body {
+    padding: 2%;
+}
+
+#catalog-btn-1{
+    width: 9em;
+    margin-bottom: 0.5em;
+}
+
+.btn-success {
+    color: #FFF;
+    background-color: #2A2A2A;
+    border-color: #2A2A2A;
+    border-radius: 5px;
+    border-width: 2px; 
+}
+
+#catalog-panel{
+    padding-top: 20px;
+}
+
+.icon-img{
+    margin:10%;
+    width:80%;
+    height:80%;
+}
+
+.btn-success{
+    color: #000;
+    background-color: #d8d8d8;
+    border-color: #222222;
+    border-radius: 5px;
+    border-width: 2px;
+}
+
+.btn-success:hover {
+    color: #000;
+    background-color: #8d8d8d;
+    border-color: #222222;
+}
+
+.btn-success:hover::after{
+    color: #000;
+    background-color: #8d8d8d;
+    border-color: #222222;
+}
+
+#login{
+	margin: 15px;
+	
+}
